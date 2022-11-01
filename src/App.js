@@ -1,5 +1,4 @@
-import './App.css';
-import {Card} from './Card.js';
+import { Card } from './Card.js';
 
 const App = () => {
   return (
