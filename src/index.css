@@ -5,9 +5,51 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* { box-sizing: border-box; }
+
+.card {
+  height: 10vh;
+  padding: 0.5rem;
+  transition: 0.2s padding ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  padding: 0.25rem;
+}
+
+.card--flipped .card-content {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: 0.4s all ease-in-out;
+  transform-style: preserve-3d;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: #e5e5e5;
 }
